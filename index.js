@@ -101,7 +101,8 @@ document.getElementById("equalBtn").onclick=function(){
         case("-"):
             result=x-y
             break
-    default:"Syntax error, please try again"
+    default:
+        "Syntax error, please try again"
     }
     document.getElementById("resultLabel").innerHTML=result
 }
