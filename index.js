@@ -1,22 +1,22 @@
-let x=""
-x=String(x)
-let y=""
+let x="" //first number
+x=String(x) //its a string, so that you can type 21 and get 21 instead of 3
+let y="" //second number
 y=String(y)
-let op
-let opPrssd=false
-let result
-let value
-let buttonId
-function buttonClick(buttonId, value) {
-  if (!opPrssd) {
+let op //operator
+let opPrssd=false //boolean that checks if an operator has been pressed
+let result 
+let value 
+let buttonId 
+function buttonClick(buttonId, value) { //function, to shorten the code
+  if (!opPrssd) { //check if the operators have been pressed, so that you type first number, then an operator, and then the second number
     x = x + value;
   } else {
     y = y + value;
   }
-  opPrssd ? document.getElementById("resultLabel").innerHTML = y : document.getElementById("resultLabel").innerHTML = x;
+  opPrssd ? document.getElementById("resultLabel").innerHTML = y : document.getElementById("resultLabel").innerHTML = x; //types your input out
 }
 
-document.getElementById("7Btn").onclick = function(){
+document.getElementById("7Btn").onclick = function(){ 
     buttonClick("7Btn",7)
 }
 
@@ -60,28 +60,28 @@ document.getElementById(".Btn").onclick = function(){
     buttonClick(".Btn",".")
 }
 
-document.getElementById("dvdBtn").onclick=function(){
+document.getElementById("divideBtn").onclick=function(){
     opPrssd=true
     op="/"
     document.getElementById("resultLabel").innerHTML=y
 }
-document.getElementById("multipBtn").onclick=function(){
+document.getElementById("multiplyBtn").onclick=function(){
     opPrssd=true
     op="*"
     document.getElementById("resultLabel").innerHTML=y
 }
-document.getElementById("mnsBtn").onclick=function(){
+document.getElementById("minusBtn").onclick=function(){
     opPrssd=true
     op="-"
     document.getElementById("resultLabel").innerHTML=y
 }
-document.getElementById("plsBtn").onclick=function(){
+document.getElementById("plusBtn").onclick=function(){
     opPrssd=true
     op="+"
     document.getElementById("resultLabel").innerHTML=y
 }
-document.getElementById("eqlBtn").onclick=function(){
-    x=Number(x)
+document.getElementById("equalBtn").onclick=function(){
+    x=Number(x) //converts it to numbers to count
     y=Number(y)
     switch(op){
         case("*"):
