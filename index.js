@@ -57,7 +57,7 @@ document.getElementById("0Btn").onclick = function(){
 }
 
 document.getElementById(".Btn").onclick = function(){
-    buttonClick(".Btn",".")
+    buttonClick(".Btn",".") //i really gotta make it so that you can only add one dot, but idk how at the moment
 }
 
 document.getElementById("divideBtn").onclick=function(){
