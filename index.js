@@ -2,11 +2,19 @@ let x="" //first number
 x=String(x) //its a string, so that you can type 21 and get 21 instead of 3
 let y="" //second number
 y=String(y)
-let op //operator
+let op //operator (haha op more like pp)
 let opPrssd=false //boolean that checks if an operator has been pressed
 let result 
 let value 
-let buttonId 
+let buttonId
+let opButtonId
+let opValue
+function opClick(opValue) {
+opPrssd=true 
+op=opValue
+document.getElementById("resultLabel").innerHTML=y
+}
+
 function buttonClick(buttonId, value) { //function, to shorten the code
   if (!opPrssd) { //check if the operators have been pressed, so that you type first number, then an operator, and then the second number
     x = x + value;
@@ -61,24 +69,16 @@ document.getElementById(".Btn").onclick = function(){
 }
 
 document.getElementById("divideBtn").onclick=function(){
-    opPrssd=true
-    op="/"
-    document.getElementById("resultLabel").innerHTML=y
+    opClick("/")
 }
 document.getElementById("multiplyBtn").onclick=function(){
-    opPrssd=true
-    op="*"
-    document.getElementById("resultLabel").innerHTML=y
+    opClick("*")
 }
 document.getElementById("minusBtn").onclick=function(){
-    opPrssd=true
-    op="-"
-    document.getElementById("resultLabel").innerHTML=y
+    opClick("-")
 }
 document.getElementById("plusBtn").onclick=function(){
-    opPrssd=true
-    op="+"
-    document.getElementById("resultLabel").innerHTML=y
+    opClick("+")
 }
 document.getElementById("equalBtn").onclick=function(){
     x=Number(x) //converts it to numbers to count
@@ -113,5 +113,4 @@ document.getElementById("cBtn").onclick=function(){
     x=String(x)
     y=String(y)
     document.getElementById("resultLabel").innerHTML=""
-}
-//hooray, my first ever app made by myself in jscript
+} //hooray, my first ever app made by myself in jscript
